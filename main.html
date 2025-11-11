@@ -51,7 +51,7 @@
             <small class="text-gray-400">Available Balance</small>
           </div>
         </div>
-        <button class="border border-gray-400 px-2 rounded-md cursor-pointer">
+        <button id="btn-logout" class="border border-gray-300 px-2 rounded-lg cursor-pointer">
           <i class="fa-solid fa-arrow-right-from-bracket"></i> <span class="text-gray-500 font-semibold">Log Out</span>
         </button>
       </section>
@@ -144,7 +144,7 @@
       </div>
     </div>
   </main>
-  <script src="index.js"></script>
+  <!-- <script src="index.js"></script> -->
   <script>
     function displayCurrentTime() {
       const now = new Date();
@@ -162,6 +162,9 @@
 
     // Update the time every second
     setInterval(displayCurrentTime, 1000);
+    document.getElementById('btn-logout').addEventListener('click', function() {
+      window.location.href = './index.html'
+    })
   </script>
 </body>
 
