@@ -5,14 +5,164 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Main page</title>
+  <script src="https://kit.fontawesome.com/21de3a4f2a.js" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    .image {
+      border: 2px solid rgb(223, 223, 223);
+      height: 90px;
+      border-radius: 15px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 500;
+      color: gray;
+      cursor: pointer;
+    }
+
+    .image img {
+      width: 20%;
+      margin-bottom: 7px;
+    }
+  </style>
+
 </head>
 
 <body class="bg-slate-800">
-  <section class="max-w-md min-h-screen bg-gray-100 mx-auto">
-    <h1>Main page</h1>
-  </section>
+  <main class="max-w-md min-h-screen bg-gray-100 mx-auto">
+    <div class="bg-white rounded-b-3xl">
+      <header class="flex justify-between p-4">
+        <span id="currentTime" class="font-bold"></span>
+        <div>
+          <i class="fa-solid fa-signal"></i>
+          <i class="fa-solid fa-wifi"></i>
+          <i class="fa-solid fa-battery-full"></i>
+        </div>
+      </header>
+      <section class="flex justify-between my-2 p-4">
+        <div class="flex">
+          <img class="h-10" src="assets/Group.png" alt="">
+          <div>
+            <h4 class="font-bold">$45000</h4>
+            <small class="text-gray-400">Available Balance</small>
+          </div>
+        </div>
+        <button class="border border-gray-400 px-2 rounded-md cursor-pointer">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> <span class="text-gray-500 font-semibold">Log Out</span>
+        </button>
+      </section>
+      <hr class="border-sm border-gray-300">
+      <section class="p-4">
+        <h1 class="text-xl font-bold my-4"><i class="fa-solid fa-fire text-amber-600"></i> Welcome to DealHelper</h1>
+        <p class="text-gray-400">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
+        <div class="grid grid-cols-3 gap-4 mb-1 mt-6">
+          <div class="image">
+            <img src="assets/wallet1.png" alt="wallet1">
+            <p>Add Money</p>
+          </div>
+          <div class="image">
+            <img src="assets/send1.png" alt="send1">
+            <p>Cashout</p>
+          </div>
+          <div class="image">
+            <img src="assets/money1.png" alt="money1">
+            <p>Transfer Money</p>
+          </div>
+          <div class="image">
+            <img src="assets/bonus1.png" alt="">
+            <p>Get bonus1</p>
+          </div>
+          <div class="image">
+            <img src="assets/purse1.png" alt="">
+            <p>Pay Bill</p>
+          </div>
+          <div class="image">
+            <img src="assets/transaction1.png" alt="">
+            <p>transaction1</p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="p-6">
+      <div class="flex justify-between my-4">
+        <h1 class="text-xl font-bold">Latest Payment</h1>
+        <button class="text-gray-500 cursor-pointer">View All</button>
+      </div>
+      <div>
+        <div class="flex justify-between items-center bg-white p-4 rounded-xl mb-4">
+          <div class="flex justify-center items-center gap-4">
+            <div class="bg-gray-100 p-3 rounded-full">
+              <img src="assets/wallet1.png" alt="">
+            </div>
+            <div>
+              <h2 class="text-xl font-semibold">Electricity Bill</h2>
+              <p class="text-sm text-gray-400">Today 01:44 AM</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-ellipsis-vertical cursor-pointer"></i>
+        </div>
+        <div class="flex justify-between items-center bg-white p-4 rounded-xl mb-4">
+          <div class="flex justify-center items-center gap-4">
+            <div class="bg-gray-100 p-3 rounded-full">
+              <img src="assets/wallet1.png" alt="">
+            </div>
+            <div>
+              <h2 class="text-xl font-semibold">Electricity Bill</h2>
+              <p class="text-sm text-gray-400">Today 01:44 AM</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-ellipsis-vertical cursor-pointer"></i>
+        </div>
+        <div class="flex justify-between items-center bg-white p-4 rounded-xl mb-4">
+          <div class="flex justify-center items-center gap-4">
+            <div class="bg-gray-100 p-3 rounded-full">
+              <img src="assets/wallet1.png" alt="">
+            </div>
+            <div>
+              <h2 class="text-xl font-semibold">Electricity Bill</h2>
+              <p class="text-sm text-gray-400">Today 01:44 AM</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-ellipsis-vertical cursor-pointer"></i>
+        </div>
+        <div class="flex justify-between items-center bg-white p-4 rounded-xl mb-4">
+          <div class="flex justify-center items-center gap-4">
+            <div class="bg-gray-100 p-3 rounded-full">
+              <img src="assets/wallet1.png" alt="">
+            </div>
+            <div>
+              <h2 class="text-xl font-semibold">Electricity Bill</h2>
+              <p class="text-sm text-gray-400">Today 01:44 AM</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-ellipsis-vertical cursor-pointer"></i>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="index.js"></script>
+  <script>
+    function displayCurrentTime() {
+      const now = new Date();
+      const options = {
+        hour: '2-digit', minute: '2-digit',
+        // second: '2-digit',
+        hour12: true
+      };
+      const timeString = now.toLocaleTimeString('en-US', options);
+      document.getElementById('currentTime').textContent = timeString;
+    }
+
+    // Call the function once to display the time immediately
+    displayCurrentTime();
+
+    // Update the time every second
+    setInterval(displayCurrentTime, 1000);
+  </script>
 </body>
 
 </html>
