@@ -60,34 +60,41 @@
         <h1 class="text-xl font-bold my-4"><i class="fa-solid fa-fire text-amber-600"></i> Welcome to DealHelper</h1>
         <p class="text-gray-400">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
         <div class="grid grid-cols-3 gap-4 mb-1 mt-6">
-          <div class="image">
+          <!-- add money toggle -->
+          <div id="add-money" class="image">
             <img src="assets/wallet1.png" alt="wallet1">
             <p>Add Money</p>
           </div>
-          <div class="image">
+          <!-- cash out toggle -->
+          <div id="cash-out" class="image">
             <img src="assets/send1.png" alt="send1">
             <p>Cashout</p>
           </div>
-          <div class="image">
+          <!-- transfer money toggle -->
+          <div id="transfer-money" class="image">
             <img src="assets/money1.png" alt="money1">
             <p>Transfer Money</p>
           </div>
-          <div class="image">
+          <!-- get bonus toggle -->
+          <div id="get-bonus" class="image">
             <img src="assets/bonus1.png" alt="">
-            <p>Get bonus1</p>
+            <p>Get bonus</p>
           </div>
-          <div class="image">
+          <!-- pay bill toggle -->
+          <div id="pay-bill" class="image">
             <img src="assets/purse1.png" alt="">
             <p>Pay Bill</p>
           </div>
-          <div class="image">
+          <!-- transaction toggle -->
+          <div id="transaction-history" class="image">
             <img src="assets/transaction1.png" alt="">
-            <p>transaction1</p>
+            <p>Transaction</p>
           </div>
         </div>
       </section>
     </div>
-    <div class="p-6">
+    <!-- latest payment section -->
+    <section id="latest-payment-section" class="p-6">
       <div class="flex justify-between my-4">
         <h1 class="text-xl font-bold">Latest Payment</h1>
         <button class="text-gray-500 cursor-pointer">View All</button>
@@ -111,7 +118,7 @@
               <img src="assets/wallet1.png" alt="">
             </div>
             <div>
-              <h2 class="text-xl font-semibold">Electricity Bill</h2>
+              <h2 class="text-xl font-semibold">Bank Deposit</h2>
               <p class="text-sm text-gray-400">Today 01:44 AM</p>
             </div>
           </div>
@@ -123,7 +130,7 @@
               <img src="assets/wallet1.png" alt="">
             </div>
             <div>
-              <h2 class="text-xl font-semibold">Electricity Bill</h2>
+              <h2 class="text-xl font-semibold">Mobile Recharge</h2>
               <p class="text-sm text-gray-400">Today 01:44 AM</p>
             </div>
           </div>
@@ -135,37 +142,183 @@
               <img src="assets/wallet1.png" alt="">
             </div>
             <div>
-              <h2 class="text-xl font-semibold">Electricity Bill</h2>
+              <h2 class="text-xl font-semibold">Gas Bill</h2>
               <p class="text-sm text-gray-400">Today 01:44 AM</p>
             </div>
           </div>
           <i class="fa-solid fa-ellipsis-vertical cursor-pointer"></i>
         </div>
       </div>
-    </div>
+    </section>
+    <!-- add money section -->
+    <section id="add-money-section" class="p-6 hidden">
+      <h1 class="text-xl font-bold my-4 text-gray-600">Add Money</h1>
+      <form action="">
+        <fieldset class="fieldset bg-white border-base-300 rounded-2xl w-sm border p-4 mx-auto">
+          <label class="label font-extrabold">Select A Bank</label>
+          <!-- <input id="account-number" type="number" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
+            placeholder="Enter your number" required /> -->
+          <select class="select bg-gray-100 rounded-3xl w-full pl-5 border-none text-gray-400">
+            <option disabled selected>Select Bank</option>
+            <option class="text-black">Bkash</option>
+            <option class="text-black">Nagad</option>
+            <option class="text-black">DBBL</option>
+          </select>
+          <label class="label font-extrabold">Bank Account Number</label>
+          <input id="pin-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
+            placeholder="Enter 11 digit account number" required />
+          <label class="label font-extrabold">Amount to Add</label>
+          <input id="pin-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
+            placeholder="Add Amount to withdraw" required />
+          <label class="label font-extrabold">Pin Number</label>
+          <input id="pin-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
+            placeholder="Enter 4 digit pin number" required />
+          <button id="btn-login"
+            class="btn btn-neutral mt-4 rounded-3xl bg-blue-600 border-none shadow-none py-6 text-white text-xl">Add
+            Money</button>
+        </fieldset>
+      </form>
+    </section>
+    <!-- cash out section -->
+    <section id="cash-out-section" class="p-6 hidden">
+      <h1 class="text-xl font-bold my-4 text-gray-600">Cash Out</h1>
+      <form action="">
+        <fieldset class="fieldset bg-white border-base-300 rounded-2xl w-sm border p-4 mx-auto">
+          <label class="label font-extrabold">Agent Number</label>
+          <input id="pin-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
+            placeholder="Enter 11 digit number" required />
+          <label class="label font-extrabold">Amount</label>
+          <input id="pin-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
+            placeholder="Enter Amount to withdraw" required />
+          <label class="label font-extrabold">Pin Number</label>
+          <input id="pin-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
+            placeholder="Enter 4 digit pin number" required />
+          <button id="btn-login"
+            class="btn btn-neutral mt-4 rounded-3xl bg-blue-600 border-none shadow-none py-6 text-white text-xl">Withdraw
+            Money</button>
+        </fieldset>
+      </form>
+    </section>
+    <!-- transfer money section -->
+    <section id="transfer-money-section" class="p-6 hidden">
+      <h1 class="text-xl font-bold my-4 text-gray-600">Transfer Money</h1>
+      <form action="">
+        <fieldset class="fieldset bg-white border-base-300 rounded-2xl w-sm border p-4 mx-auto">
+          <label class="label font-extrabold">User Account Number</label>
+          <input id="pin-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
+            placeholder="Enter 11 digit number" required />
+          <label class="label font-extrabold">Amount</label>
+          <input id="pin-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
+            placeholder="Enter Amount to transfer" required />
+          <label class="label font-extrabold">Pin Number</label>
+          <input id="pin-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
+            placeholder="Enter 4 digit pin number" required />
+          <button id="btn-login"
+            class="btn btn-neutral mt-4 rounded-3xl bg-blue-600 border-none shadow-none py-6 text-white text-xl">Send
+            Now</button>
+        </fieldset>
+      </form>
+    </section>
+    <!-- get bonus Section -->
+    <section id="get-bonus-section" class="p-6 hidden">
+      <h1 class="text-xl font-bold my-4 text-gray-600">Get Bonus</h1>
+      <form action="">
+        <fieldset class="fieldset bg-white border-base-300 rounded-2xl w-sm border p-4 mx-auto">
+          <label class="label font-extrabold">Enter Bonus Coupon</label>
+          <input id="pin-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
+            placeholder="Enter your coupon" required />
+          <button id="btn-login"
+            class="btn btn-neutral mt-4 rounded-3xl bg-blue-600 border-none shadow-none py-6 text-white text-xl">Get
+            Bonus</button>
+        </fieldset>
+      </form>
+    </section>
+    <!-- pay bill section -->
+    <section id="pay-bill-section" class="p-6 hidden">
+      <h1 class="text-xl font-bold my-4 text-gray-600">Pay Bill</h1>
+      <form action="">
+        <fieldset class="fieldset bg-white border-base-300 rounded-2xl w-sm border p-4 mx-auto">
+          <label class="label font-extrabold">Select To Pay</label>
+          <select class="select bg-gray-100 rounded-3xl w-full pl-5 border-none text-gray-400">
+            <option disabled selected>Select Bank</option>
+            <option class="text-black">Bkash</option>
+            <option class="text-black">Nagad</option>
+            <option class="text-black">DBBL</option>
+          </select>
+          <label class="label font-extrabold">Biller Account Number</label>
+          <input id="pin-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
+            placeholder="Enter 11 digit account number" required />
+          <label class="label font-extrabold">Amount to Pay</label>
+          <input id="pin-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
+            placeholder="Add Amount to pay" required />
+          <label class="label font-extrabold">Pin Number</label>
+          <input id="pin-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
+            placeholder="Enter 4 digit pin number" required />
+          <button id="btn-login"
+            class="btn btn-neutral mt-4 rounded-3xl bg-blue-600 border-none shadow-none py-6 text-white text-xl">Pay
+            Now</button>
+        </fieldset>
+      </form>
+    </section>
+    <!-- transaction history section -->
+    <section id="transaction-history-section" class="p-6 hidden">
+      <div class="flex justify-between my-4">
+        <h1 class="text-xl font-bold">Transaction History</h1>
+        <button class="text-gray-500 cursor-pointer">View All</button>
+      </div>
+      <div>
+        <div class="flex justify-between items-center bg-white p-4 rounded-xl mb-4">
+          <div class="flex justify-center items-center gap-4">
+            <div class="bg-gray-100 p-3 rounded-full">
+              <img src="assets/wallet1.png" alt="">
+            </div>
+            <div>
+              <h2 class="text-xl font-semibold">Electricity Bill</h2>
+              <p class="text-sm text-gray-400">Today 01:44 AM</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-ellipsis-vertical cursor-pointer"></i>
+        </div>
+        <div class="flex justify-between items-center bg-white p-4 rounded-xl mb-4">
+          <div class="flex justify-center items-center gap-4">
+            <div class="bg-gray-100 p-3 rounded-full">
+              <img src="assets/wallet1.png" alt="">
+            </div>
+            <div>
+              <h2 class="text-xl font-semibold">Bank Deposit</h2>
+              <p class="text-sm text-gray-400">Today 01:44 AM</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-ellipsis-vertical cursor-pointer"></i>
+        </div>
+        <div class="flex justify-between items-center bg-white p-4 rounded-xl mb-4">
+          <div class="flex justify-center items-center gap-4">
+            <div class="bg-gray-100 p-3 rounded-full">
+              <img src="assets/wallet1.png" alt="">
+            </div>
+            <div>
+              <h2 class="text-xl font-semibold">Mobile Recharge</h2>
+              <p class="text-sm text-gray-400">Today 01:44 AM</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-ellipsis-vertical cursor-pointer"></i>
+        </div>
+        <div class="flex justify-between items-center bg-white p-4 rounded-xl mb-4">
+          <div class="flex justify-center items-center gap-4">
+            <div class="bg-gray-100 p-3 rounded-full">
+              <img src="assets/wallet1.png" alt="">
+            </div>
+            <div>
+              <h2 class="text-xl font-semibold">Gas Bill</h2>
+              <p class="text-sm text-gray-400">Today 01:44 AM</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-ellipsis-vertical cursor-pointer"></i>
+        </div>
+      </div>
+    </section>
   </main>
-  <!-- <script src="index.js"></script> -->
-  <script>
-    function displayCurrentTime() {
-      const now = new Date();
-      const options = {
-        hour: '2-digit', minute: '2-digit',
-        // second: '2-digit',
-        hour12: true
-      };
-      const timeString = now.toLocaleTimeString('en-US', options);
-      document.getElementById('currentTime').textContent = timeString;
-    }
-
-    // Call the function once to display the time immediately
-    displayCurrentTime();
-
-    // Update the time every second
-    setInterval(displayCurrentTime, 1000);
-    document.getElementById('btn-logout').addEventListener('click', function() {
-      window.location.href = './index.html'
-    })
-  </script>
+  <script src="main.js"></script>
 </body>
 
 </html>
