@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style>
-    .image {
+    /* .image {
       border: 2px solid rgb(223, 223, 223);
       height: 90px;
       border-radius: 15px;
@@ -22,12 +22,12 @@
       font-weight: 500;
       color: gray;
       cursor: pointer;
-    }
+    } */
 
-    .image img {
+    /* .image img {
       width: 20%;
       margin-bottom: 7px;
-    }
+    } */
   </style>
 
 </head>
@@ -47,7 +47,7 @@
         <div class="flex">
           <img class="h-10" src="assets/Group.png" alt="">
           <div>
-            <h4 class="font-bold">$45000</h4>
+            <h4 class="font-bold">$<span id="total-amount">4500</span></h4>
             <small class="text-gray-400">Available Balance</small>
           </div>
         </div>
@@ -61,33 +61,33 @@
         <p class="text-gray-400">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
         <div class="grid grid-cols-3 gap-4 mb-1 mt-6">
           <!-- add money toggle -->
-          <div id="add-money" class="image">
-            <img src="assets/wallet1.png" alt="wallet1">
+          <div id="add-money" class="border-2 border-gray-300 h-24 flex flex-col items-center justify-center rounded-lg cursor-pointer">
+            <img class="mb-2 w-7" src="assets/wallet1.png" alt="wallet1">
             <p>Add Money</p>
           </div>
           <!-- cash out toggle -->
-          <div id="cash-out" class="image">
-            <img src="assets/send1.png" alt="send1">
+          <div id="cash-out" class="border-2 border-gray-300 h-24 flex flex-col items-center justify-center rounded-lg cursor-pointer">
+            <img class="mb-2 w-7" src="assets/send1.png" alt="send1">
             <p>Cashout</p>
           </div>
           <!-- transfer money toggle -->
-          <div id="transfer-money" class="image">
-            <img src="assets/money1.png" alt="money1">
+          <div id="transfer-money" class="border-2 border-gray-300 h-24 flex flex-col items-center justify-center rounded-lg cursor-pointer">
+            <img class="mb-2 w-7" src="assets/money1.png" alt="money1">
             <p>Transfer Money</p>
           </div>
           <!-- get bonus toggle -->
-          <div id="get-bonus" class="image">
-            <img src="assets/bonus1.png" alt="">
+          <div id="get-bonus" class="border-2 border-gray-300 h-24 flex flex-col items-center justify-center rounded-lg cursor-pointer">
+            <img class="mb-2 w-7" src="assets/bonus1.png" alt="">
             <p>Get bonus</p>
           </div>
           <!-- pay bill toggle -->
-          <div id="pay-bill" class="image">
-            <img src="assets/purse1.png" alt="">
+          <div id="pay-bill" class="border-2 border-gray-300 h-24 flex flex-col items-center justify-center rounded-lg cursor-pointer">
+            <img class="mb-2 w-7" src="assets/purse1.png" alt="">
             <p>Pay Bill</p>
           </div>
           <!-- transaction toggle -->
-          <div id="transaction-history" class="image">
-            <img src="assets/transaction1.png" alt="">
+          <div id="transaction-history" class="border-2 border-gray-300 h-24 flex flex-col items-center justify-center rounded-lg cursor-pointer">
+            <img class="mb-2 w-7" src="assets/transaction1.png" alt="">
             <p>Transaction</p>
           </div>
         </div>
@@ -151,7 +151,7 @@
       </div>
     </section>
     <!-- add money section -->
-    <section id="add-money-section" class="p-6 hidden">
+    <section id="add-money-section" class="p-4 hidden">
       <h1 class="text-xl font-bold my-4 text-gray-600">Add Money</h1>
       <form action="">
         <fieldset class="fieldset bg-white border-base-300 rounded-2xl w-sm border p-4 mx-auto">
@@ -165,42 +165,42 @@
             <option class="text-black">DBBL</option>
           </select>
           <label class="label font-extrabold">Bank Account Number</label>
-          <input id="pin-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
+          <input id="add-money-account-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
             placeholder="Enter 11 digit account number" required />
           <label class="label font-extrabold">Amount to Add</label>
-          <input id="pin-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
+          <input id="add-money-amount" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
             placeholder="Add Amount to withdraw" required />
           <label class="label font-extrabold">Pin Number</label>
-          <input id="pin-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
+          <input id="add-money-pin-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
             placeholder="Enter 4 digit pin number" required />
-          <button id="btn-login"
+          <button id="btn-add-money"
             class="btn btn-neutral mt-4 rounded-3xl bg-blue-600 border-none shadow-none py-6 text-white text-xl">Add
             Money</button>
         </fieldset>
       </form>
     </section>
     <!-- cash out section -->
-    <section id="cash-out-section" class="p-6 hidden">
+    <section id="cash-out-section" class="p-4 hidden">
       <h1 class="text-xl font-bold my-4 text-gray-600">Cash Out</h1>
       <form action="">
         <fieldset class="fieldset bg-white border-base-300 rounded-2xl w-sm border p-4 mx-auto">
           <label class="label font-extrabold">Agent Number</label>
-          <input id="pin-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
+          <input id="cash-out-agent-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
             placeholder="Enter 11 digit number" required />
           <label class="label font-extrabold">Amount</label>
-          <input id="pin-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
+          <input id="cash-out-amount" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
             placeholder="Enter Amount to withdraw" required />
           <label class="label font-extrabold">Pin Number</label>
-          <input id="pin-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
+          <input id="cash-out-pin-number" type="text" class="input w-full rounded-3xl bg-gray-100 border-none py-6 pl-5"
             placeholder="Enter 4 digit pin number" required />
-          <button id="btn-login"
+          <button id="btn-withdraw"
             class="btn btn-neutral mt-4 rounded-3xl bg-blue-600 border-none shadow-none py-6 text-white text-xl">Withdraw
             Money</button>
         </fieldset>
       </form>
     </section>
     <!-- transfer money section -->
-    <section id="transfer-money-section" class="p-6 hidden">
+    <section id="transfer-money-section" class="p-4 hidden">
       <h1 class="text-xl font-bold my-4 text-gray-600">Transfer Money</h1>
       <form action="">
         <fieldset class="fieldset bg-white border-base-300 rounded-2xl w-sm border p-4 mx-auto">
@@ -220,7 +220,7 @@
       </form>
     </section>
     <!-- get bonus Section -->
-    <section id="get-bonus-section" class="p-6 hidden">
+    <section id="get-bonus-section" class="p-4 hidden">
       <h1 class="text-xl font-bold my-4 text-gray-600">Get Bonus</h1>
       <form action="">
         <fieldset class="fieldset bg-white border-base-300 rounded-2xl w-sm border p-4 mx-auto">
@@ -234,7 +234,7 @@
       </form>
     </section>
     <!-- pay bill section -->
-    <section id="pay-bill-section" class="p-6 hidden">
+    <section id="pay-bill-section" class="p-4 hidden">
       <h1 class="text-xl font-bold my-4 text-gray-600">Pay Bill</h1>
       <form action="">
         <fieldset class="fieldset bg-white border-base-300 rounded-2xl w-sm border p-4 mx-auto">
@@ -261,7 +261,7 @@
       </form>
     </section>
     <!-- transaction history section -->
-    <section id="transaction-history-section" class="p-6 hidden">
+    <section id="transaction-history-section" class="p-4 hidden">
       <div class="flex justify-between my-4">
         <h1 class="text-xl font-bold">Transaction History</h1>
         <button class="text-gray-500 cursor-pointer">View All</button>
@@ -319,6 +319,8 @@
     </section>
   </main>
   <script src="main.js"></script>
+  <script src="add-money.js"></script>
+  <script src="cash-out.js"></script>
 </body>
 
 </html>
